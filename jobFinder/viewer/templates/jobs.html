@@ -2,6 +2,8 @@
 
 {% block content %}
 
+        <a href="{% url 'job_add' %}">Add New</a>
+
         <ul>
           {% for m in jobs %}
             <li><a href="{% url 'job_details' m.id %}">{{m.title}}</a></li>
