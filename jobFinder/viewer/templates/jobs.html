@@ -4,6 +4,10 @@
 
         <a href="{% url 'job_add' %}">Add New</a>
 
+        <div style="border: 1px solid #cecece; padding: 16px">
+            <h2>Advance Search</h2>
+        </div>
+
         <ul>
           {% for m in jobs %}
             <li><a href="{% url 'job_details' m.id %}">{{m.title}}</a></li>

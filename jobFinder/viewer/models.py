@@ -25,9 +25,9 @@ class Skill(models.Model):
 class Job(models.Model):
     title = models.CharField(max_length=100)
     # company = models.ForeignKey
-    publish_date = models.DateField()
+    publish_date = models.DateField(auto_now_add=True)
     expire_date = models.DateField()
-    active_days = models.IntegerField(default=31)
+    # active_days = models.IntegerField(default=31)
     job_desc = models.TextField(null=True, blank=True)
     job_image = models.ImageField(upload_to='images/', null=True, blank=True)
     job_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, null=True, blank=True)
