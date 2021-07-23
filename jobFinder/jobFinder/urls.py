@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from viewer.views import ListJobs, DetailJob, UpdateJob, AddJob
+from viewer.views import ListJobs, DetailJob, UpdateJob, AddJob, DeleteJob
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs', ListJobs.as_view(), name='jobs'),
     path('jobs/<int:pk>', DetailJob.as_view(), name='job_details'),
-    path('movies/<int:pk>/update', UpdateJob.as_view(), name='job_update'),
-    path('movies/create', AddJob.as_view(), name='job_add'),
+    path('jobs/<int:pk>/update', UpdateJob.as_view(), name='job_update'),
+    path('jobs/create', AddJob.as_view(), name='job_add'),
+    path('jobs/<int:pk>/delete', DeleteJob.as_view(), name='job_delete'),
 ]
