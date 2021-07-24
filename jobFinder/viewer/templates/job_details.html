@@ -6,6 +6,14 @@
 <p><b>Title:</b> {{job.title}}</p>
 <p><b>Publish date:</b> {{job.publish_date}}</p>
 <p><b>Storyline:</b> {{job.job_desc}}</p>
+<div>
+    <b>Skills:</b>
+    <ul>
+    {% for skill in job.job_skills.all %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+    </ul>
+</div>
 <hr>
 
 <a href="{% url 'job_update' job.id %}">Update</a>

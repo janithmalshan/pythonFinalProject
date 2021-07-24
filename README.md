@@ -26,6 +26,9 @@ python manage.py shell
 from viewer.models import Genre
 Genre.objects.create(name="Romance")
 Genre.object.create(name="Drama")
+///
+x = Genre(name='', abc='')
+a = Genre.objects.all()
 
 
 python manage.py createsuperuser
