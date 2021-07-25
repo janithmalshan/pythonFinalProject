@@ -4,8 +4,15 @@
 {% block content %}
 
 <p><b>Title:</b> {{job.title}}</p>
+<p>{{job.job_desc}}</p>
 <p><b>Publish date:</b> {{job.publish_date}}</p>
-<p><b>Storyline:</b> {{job.job_desc}}</p>
+
+{% if job.job_image %}
+    <p> <img src="{{job.job_image.url}}"> </p>
+{% else %}
+    <p> <img src="https://dummyimage.com/200x300/000/fff&text=No+movie+image"></p>
+{% endif %}
+
 <div>
     <b>Skills:</b>
     <ul>
