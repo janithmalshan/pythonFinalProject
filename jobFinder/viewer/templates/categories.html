@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>temp list category</h2>
+
+<a href="{% url 'category_add' %}">Add New</a>
+<ul>
+    {% for a in categories %}
+    <li>
+        <h2>{{a.name}}</h2>
+        <div>
+            <a href="{% url 'category_update' a.id %}">Update</a>
+            <span><b>.</b></span>
+            <a href="{% url 'category_delete' a.id %}">Delete</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

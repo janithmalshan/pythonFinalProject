@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from viewer.views import ListJobs, DetailJob, UpdateJob, AddJob, DeleteJob
+from viewer.views import ListJobs, DetailJob, UpdateJob, AddJob, DeleteJob, ListCategories, UpdateCategory, AddCategory, DeleteCategory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,9 @@ urlpatterns = [
     path('jobs/<int:pk>/update', UpdateJob.as_view(), name='job_update'),
     path('jobs/create', AddJob.as_view(), name='job_add'),
     path('jobs/<int:pk>/delete', DeleteJob.as_view(), name='job_delete'),
+    path('categories', ListCategories.as_view(), name='categories'),
+    path('categories/<int:pk>/update', UpdateCategory.as_view(), name='category_update'),
+    path('categories/create', AddCategory.as_view(), name='category_add'),
+    path('categories/<int:pk>/delete', DeleteCategory.as_view(), name='category_delete'),
+    path('skills', ListCategories.as_view(), name='skills'),
 ]

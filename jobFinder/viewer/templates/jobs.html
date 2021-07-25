@@ -3,6 +3,11 @@
 {% block content %}
 
         <a href="{% url 'job_add' %}">Add New</a>
+        <ul>
+          {% for a in categories %}
+            <li><a href="#">{{a.name}}</a></li>
+          {% endfor %}
+        </ul>
 
         <div style="border: 1px solid #cecece; padding: 16px">
             <h2>Advance Search</h2>

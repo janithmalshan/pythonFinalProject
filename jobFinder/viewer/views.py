@@ -1,15 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Job
+from .models import Job, Category, Skill
 
 
-def jobs(request):
-    return HttpResponse('Hello')
-
-
+# Jobs
 class ListJobs(ListView):
     template_name = 'jobs.html'
     model = Job
@@ -41,3 +35,31 @@ class DeleteJob(DeleteView):
     model = Job
     success_url = reverse_lazy('jobs')
     context_object_name = 'job'
+
+
+# Job category
+class ListCategories(ListView):
+    template_name = 'categories.html'
+    model = Category
+    context_object_name = 'categories'
+
+
+class UpdateCategory(UpdateView):
+    template_name = 'category_update.html'
+    model = Category
+    success_url = reverse_lazy('categories')
+    fields = '__all__'
+
+
+class AddCategory(CreateView):
+    template_name = 'category_add.html'
+    model = Category
+    success_url = reverse_lazy('categories')
+    fields = '__all__'
+
+
+class DeleteCategory(DeleteView):
+    template_name = 'category_delete.html'
+    model = Category
+    success_url = reverse_lazy('categories')
+    context_object_name = 'category'
