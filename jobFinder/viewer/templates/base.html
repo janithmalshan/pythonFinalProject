@@ -8,17 +8,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container fixed">
-        <a class="navbar-brand" href="/jobs">Jobs ABC</a>
+      <div class="container-fluid fixed">
+        <a class="navbar-brand" href="/jobs"><b>JOB HUNTER</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: space-between;">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{% url 'jobs' %}">
               Home
@@ -30,11 +31,14 @@
               Manage Skill
             </a>
           </div>
+          <div>
+            <a href="{% url 'job_add' %}" class="btn btn-secondary">Add New Job</a>
+          </div>
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="jumbotron">
+    <div class="container-xxl">
+      <div class="col">
           {% block content %}{% endblock %}
       </div>
     </div>

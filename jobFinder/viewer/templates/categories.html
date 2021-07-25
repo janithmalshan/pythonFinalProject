@@ -2,9 +2,8 @@
 
 {% block content %}
 
-<h2>temp list category</h2>
+<h2>Listed categories<h4><a href="{% url 'category_add' %}">Add New</a></h4></h2>
 
-<a href="{% url 'category_add' %}">Add New</a>
 <ul>
     {% for a in categories %}
     <li>
@@ -17,6 +16,5 @@
     </li>
     {% endfor %}
 </ul>
-
 
 {% endblock %}

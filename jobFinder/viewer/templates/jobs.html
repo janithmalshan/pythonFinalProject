@@ -2,21 +2,33 @@
 
 {% block content %}
 
-        <a href="{% url 'job_add' %}">Add New</a>
-        <ul>
-          {% for a in categories %}
-            <li><a href="#">{{a.name}}</a></li>
-          {% endfor %}
-        </ul>
+<ul>
+    {% for a in skills %}
+    <li><a href="#">{{a.name}}</a></li>
+    {% endfor %}
+</ul>
 
-        <div style="border: 1px solid #cecece; padding: 16px">
-            <h2>Advance Search</h2>
+<div style="border: 1px solid #cecece; padding: 16px">
+    <h4>Advance Search - comming soon...</h4>
+</div>
+
+<ul>
+</ul>
+
+<div class="row" data-masonry='{"percentPosition": true }'>
+    {% for m in jobs %}
+    <div class="col-sm-4 col-lg-3 mb-4">
+        <div class="card h-100">
+            {% if m.job_image %}
+            <img src="{{m.job_image}}" class="card-img-top" alt="img">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'job_details' m.id %}">{{m.title}}</a></h5>
+                <p class="card-text">{{m.job_desc}}</p>
+            </div>
         </div>
-
-        <ul>
-          {% for m in jobs %}
-            <li><a href="{% url 'job_details' m.id %}">{{m.title}}</a></li>
-          {% endfor %}
-        </ul>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

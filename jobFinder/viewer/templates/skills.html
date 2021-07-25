@@ -2,9 +2,8 @@
 
 {% block content %}
 
-<h2>Skills</h2>
+<h2>Listed skill types <h4><a href="{% url 'skill_add' %}">Add New</a></h4></h2>
 
-<a href="{% url 'skill_add' %}">Add New</a>
 <ul>
     {% for a in skills %}
     <li>
