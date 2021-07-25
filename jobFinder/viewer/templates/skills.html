@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Skills</h2>
+
+<a href="{% url 'skill_add' %}">Add New</a>
+<ul>
+    {% for a in skills %}
+    <li>
+        <h2>{{a.name}}</h2>
+        <div>
+            <a href="{% url 'skill_update' a.id %}">Update</a>
+            <span><b>.</b></span>
+            <a href="{% url 'skill_delete' a.id %}">Delete</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

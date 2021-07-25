@@ -63,3 +63,31 @@ class DeleteCategory(DeleteView):
     model = Category
     success_url = reverse_lazy('categories')
     context_object_name = 'category'
+
+
+# Job category skills
+class ListSkills(ListView):
+    template_name = 'skills.html'
+    model = Skill
+    context_object_name = 'skills'
+
+
+class UpdateSkill(UpdateView):
+    template_name = 'skill_update.html'
+    model = Skill
+    success_url = reverse_lazy('skills')
+    fields = '__all__'
+
+
+class AddSkill(CreateView):
+    template_name = 'skill_add.html'
+    model = Skill
+    success_url = reverse_lazy('skills')
+    fields = '__all__'
+
+
+class DeleteSkill(DeleteView):
+    template_name = 'skill_delete.html'
+    model = Skill
+    success_url = reverse_lazy('skills')
+    context_object_name = 'skill'
